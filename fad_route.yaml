@@ -6,6 +6,7 @@ metadata:
   name: fad-demo-app
   namespace: fadgw
   annotations: {
+        "ingress-controller" : "fadc-ingress-controller",
         "fortiadc-ip" : "172.23.133.171",
         "fortiadc-login" : "fad-login",
         "fortiadc-vdom" : "root",
