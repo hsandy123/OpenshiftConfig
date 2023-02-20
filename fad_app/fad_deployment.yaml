@@ -19,9 +19,18 @@ spec:
       - env:
         - name: service_name
           value: fad-app
-        image: hsandy123/simpleserver:1.0.0-002
+        - name: WORD
+          value: "HELLO app 1!!"
+        image: hsandy123/simpleserver:1.0.0-004
         imagePullPolicy: Always
         name: fad-app
         ports:
         - containerPort: 1234
           protocol: TCP
+        securityContext:
+            allowPrivilegeEscalation: false
+            runAsNonRoot: true
+            seccompProfile:
+                type: RuntimeDefault
+            capabilities:
+                drop: ["ALL"]
